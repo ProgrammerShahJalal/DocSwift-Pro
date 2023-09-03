@@ -3,12 +3,20 @@
 
 
 {% block content %}
-<div class="container">
+<div class="container py-4">
     <h1>Sign Up</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {% bootstrap_form form %}
-        <input type="submit" value="Sign Up" class="btn btn-default">
-    </form>
+    <div class="row">
+        <div class="col col-12 col-md-6">
+            <form method="POST">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <br>
+                <input type="submit" value="Sign Up" class="btn btn-primary">
+            </form>
+        </div>
+        <div class="col col-12 col-md-6">
+            <img width="100%" src="../../../static/images/signup.jpg" alt="signup page pic">
+        </div>
+    </div>
 </div>
 {% endblock %}
