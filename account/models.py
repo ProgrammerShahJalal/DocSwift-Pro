@@ -11,7 +11,7 @@ USER_CHOICES = [
 ]
 
 class User(AbstractUser):
-    user_type = models.CharField(choices=USER_CHOICES, max_length=2)
+    user_type = models.CharField(choices=USER_CHOICES, max_length=4)
 
     def is_doctor(self):
         if self.user_type == 'D':

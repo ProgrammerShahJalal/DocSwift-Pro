@@ -1,9 +1,12 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% load bootstrap3 %}
 
 {% block content %}
-<div class="row">
+<div class="row py-4">
+    <div class="text-center">
+        <img width="30%" src="{% static 'images/accounting.png' %}" alt="">
+    </div>
     <div class="col-md-5">
         <h3>Individuals' Outstandings</h3>
         <div class="card card-body">

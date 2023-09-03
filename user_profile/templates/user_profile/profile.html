@@ -3,12 +3,13 @@
 
 
 {% block content %}
-<div class="container">
+<div class="container py-5">
     <h2>Hello, {{ user.username }}</h2>
     <form method="POST">
         {% csrf_token %}
         {% bootstrap_form form %}
-        <input type="submit" value="Update" class="btn btn-default">
+        <br>
+        <input type="submit" value="Update" class="btn btn-primary">
     </form>
 </div>
 {% endblock %}

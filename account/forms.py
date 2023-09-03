@@ -5,7 +5,9 @@ from .models import ContactMessage
 
 USER_CHOICES = [
     ('D', 'Doctor'),
-    ('P', 'Patient')
+    ('P', 'Patient'),
+    ('R', 'Receptionist'),
+    ('HR', 'HR'),
 ]
 
 class UserCreateForm(UserCreationForm):
