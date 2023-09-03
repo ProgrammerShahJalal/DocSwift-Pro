@@ -81,6 +81,19 @@ def rdashboard(request):
 
 
 @login_required(login_url='/login/')
+def ddashboard(request):
+    if request.method == "GET" and request.user.user_type == "D":
+        context = {
+            "totalApp" : len(Appointment.objects.all()),
+            "compApp" : len(Appointment.objects.filter(status="Completed")),
+            "pendApp" : len(Appointment.objects.filter(status="Pending")),
+            "app_list" : Appointment.objects.all(),
+            "pat_list" : UserProfile.objects.filter(user__user_type="P")[:5]
+        }
+        return render(request, 'appointment/r_dashboard.html', context=context)
+
+
+@login_required(login_url='/login/')
 def hrdashboard(request):
     if request.method == "GET" and request.user.user_type == "HR":
         context = {

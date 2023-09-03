@@ -13,6 +13,7 @@ urlpatterns = [
     path("prescription/create", views.PrescriptionCreateView, name="doc-prescriptions-create"),
     path("appointment/create", views.AppointmentCreateView, name="appointment-create"),
     path("rdashboard/", views.rdashboard, name="r_dashboard"),
+    path("ddashboard/", views.ddashboard, name="d_dashboard"),
     path("hrdashboard/", views.hrdashboard, name="hr_dashboard"),
     path("hraccounting/", views.hraccounting, name="hr_accounting"),
     path("payments/", views.pateintpayments, name="pat_payments"),
