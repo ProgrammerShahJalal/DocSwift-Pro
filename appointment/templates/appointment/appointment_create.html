@@ -3,12 +3,13 @@
 
 
 {% block content %}
-<div class="container">
+<div class="container py-4">
     <h2>Create an Appointment</h2>
     <form method="POST">
         {% csrf_token %}
         {% bootstrap_form form %}
-        <input type="submit" value="Create" class="btn btn-default">
+        <br>
+        <input type="submit" value="Create" class="btn btn-primary">
     </form>
 </div>
 {% endblock %}

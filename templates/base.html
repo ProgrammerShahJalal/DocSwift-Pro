@@ -176,6 +176,9 @@
                     ><button class="btn btn-warning">Log Out</button></a
                   >
                 </li>
+                <li>
+                  <a href="{% url 'appointment:appointment-create' %}" class="btn btn-primary">Book An Appointment</a>
+                </li>
                 {% endif %} {% else %}
                 <li>
                   <a href="{% url 'account:home' %}" class="btn btn-simple">Home</a>
@@ -250,7 +253,7 @@
                   <div class="card-body">
                       <h6 class="card-title">New Hospital Services</h6>
                       <p class="card-text">Stay updated with our latest hospital services and medical advancements.</p>
-                      <a href="{% url 'account:about-us' %}" class="btn btn-primary">Read More</a>
+                      <a href="{% url 'appointment:appointment-create' %}" class="btn btn-primary">Book An Appointment</a>
                   </div>
               </div>
               
