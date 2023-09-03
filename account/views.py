@@ -4,9 +4,10 @@ from django.views.generic import CreateView
 from django.shortcuts import redirect, render
 from .forms import ContactForm, UserCreateForm
 from user_profile.models import UserProfile
+# from django.contrib.auth.decorators import login_required
 
-def home(request):
-    return render(request, 'account/home.html')
+# def home(request):
+#     return render(request, 'account/home.html')
 
 def aboutus(request):
     return render(request, 'account/aboutus.html')
@@ -40,3 +41,13 @@ def SignUp(request):
     else:
         form = UserCreateForm()
     return render(request, 'account/signup.html', {'form': form})
+
+
+# @login_required(login_url='/login/')
+def home(request):
+    if request.method == "GET":
+        context = {
+            "pat_list" : UserProfile.objects.filter(user__user_type="P")[:5]
+        }
+        return render(request, 'account/home.html', context=context)
+

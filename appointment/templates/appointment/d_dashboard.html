@@ -23,6 +23,7 @@
         <h3>Appointments -</h3>
         <div class="card card-body">
             <a href="{% url 'appointment:appointment-create' %}"><button class="btn btn-primary">Create Appointment</button></a>
+            
             <table class="table table-striped">
                 <thead>
                     <th>Date</th>
@@ -48,7 +49,9 @@
         <h3>Last 5 Patients -</h3>
         <div class="card card-body">
             <a href="{% url 'user_profile:profile-create' %}"><button class="btn btn-primary">Create Patient</button></a>
-            <table class="table table-striped">
+            <br>
+            <input type="text" id="searchInput" placeholder="Search by Name">
+            <table class="table table-striped" id="patientTable">
                 <thead> 
                     <th>Name</th>
                     <th>Phone</th>
@@ -73,4 +76,31 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Get the input field and table
+    var input = document.getElementById("searchInput");
+    var table = document.getElementById("patientTable");
+    var rows = table.getElementsByTagName("tr");
+
+    // Add an event listener to the input field
+    input.addEventListener("keyup", function () {
+        var filter = input.value.toLowerCase();
+        
+        // Loop through all table rows, hide those that don't match the search query
+        for (var i = 1; i < rows.length; i++) { // Start from 1 to skip the table header row
+            var nameColumn = rows[i].getElementsByTagName("td")[0]; // Assuming name is in the first column
+            if (nameColumn) {
+                var name = nameColumn.textContent || nameColumn.innerText;
+                if (name.toLowerCase().indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    });
+</script>
+
+
 {% endblock %}

@@ -90,7 +90,7 @@ def ddashboard(request):
             "app_list" : Appointment.objects.all(),
             "pat_list" : UserProfile.objects.filter(user__user_type="P")[:5]
         }
-        return render(request, 'appointment/r_dashboard.html', context=context)
+        return render(request, 'appointment/d_dashboard.html', context=context)
 
 
 @login_required(login_url='/login/')

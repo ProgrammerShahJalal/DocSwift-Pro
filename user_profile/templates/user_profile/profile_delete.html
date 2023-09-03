@@ -3,14 +3,16 @@
 
 
 {% block content %}
-<div class="container py-4">
+<div class="container py-4 text-center">
+    <img width="50%" src="https://i.ibb.co/Z6pDjqC/undraw-Throw-away-re-x60k.png" alt="">
     <h2>Are you sure you want to delete {{ user.username }} profile?</h2>
     <div class="col-md-1">
-        <a href="{% url 'appointment:r_dashboard' %}"><button class="btn btn-warning">Cancel</button></a>
+        <a href="{% url 'appointment:d_dashboard' %}"><button class="btn btn-warning">Cancel</button></a>
     </div>
     <div class="col-md-1">
         <form method="POST">
             {% csrf_token %}
+            <br>
         <input type="submit" value="Delete" class="btn btn-danger">
         </form>
     </div>   

@@ -4,9 +4,57 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container py-4">
     <h2 class="text-center mt-5">Welcome to DocSwift Pro <br/> Hospital Management System</h2>
     <img width="100%" src="../../../static/images/hospital.jpg" alt="hospital front view">
+
+
+    <input type="text" id="searchInput" placeholder="Search by Name">
+            <table class="table table-striped" id="patientTable">
+                <thead> 
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                </thead>
+                {% for obj in pat_list %}
+                <tr>
+                    <td>{{ obj.name }}</td>
+                    <td>{{ obj.phone }}</td>
+                    <td>{{ obj.email }}</td>
+                    <td>{{ obj.gender }}</td>
+                    <td>{{ obj.age }}</td>
+                </tr>
+                {% endfor %}
+            </table>
 </div>
+
+
+
+<script>
+    // Get the input field and table
+    var input = document.getElementById("searchInput");
+    var table = document.getElementById("patientTable");
+    var rows = table.getElementsByTagName("tr");
+
+    // Add an event listener to the input field
+    input.addEventListener("keyup", function () {
+        var filter = input.value.toLowerCase();
+        
+        // Loop through all table rows, hide those that don't match the search query
+        for (var i = 1; i < rows.length; i++) { // Start from 1 to skip the table header row
+            var nameColumn = rows[i].getElementsByTagName("td")[0]; // Assuming name is in the first column
+            if (nameColumn) {
+                var name = nameColumn.textContent || nameColumn.innerText;
+                if (name.toLowerCase().indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    });
+</script>
     
 {% endblock %}
