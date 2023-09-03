@@ -10,6 +10,8 @@ def home(request):
 
 def aboutus(request):
     return render(request, 'account/aboutus.html')
+def thankyou(request):
+    return render(request, 'account/thankyou.html')
 
 
 def contact(request):
@@ -17,6 +19,7 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
+            return redirect('account:thankyou') 
     else:
         form = ContactForm()
     

@@ -12,4 +12,5 @@ urlpatterns = [
     path("", views.home, name="home"),
     path("aboutus/", views.aboutus, name="about-us"),
     path("contact/", views.contact, name="contact"),
+    path("thankyou/", views.thankyou, name="thankyou"),
 ]
