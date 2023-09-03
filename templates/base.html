@@ -18,8 +18,8 @@
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand mynav" href="{% url 'account:home' %}"
-        >DocSwift Pro</a
-      >
+          >DocSwift Pro</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -32,247 +32,265 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         
-              <ul class="navbar-nav ">
-                {% if user.is_authenticated %} {% if user.is_doctor %}
-                <!-- doctor's dashboard -->
-                <li>
-                  <a href="{% url 'account:home' %}" class="btn btn-simple">Home</a>
-                </li>
-                <li>
-                  <a href="{% url 'account:about-us' %}" class="btn btn-simple"
-                    >About Us</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'account:contact' %}" class="btn btn-simple"
-                    >Contact</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'user_profile:profile' %}" class="btn btn-simple"
-                    >Profile</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="{% url 'appointment:doctor-appointments' %}"
-                    class="btn btn-simple"
-                    >Appointments</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'appointment:d_dashboard' %}" class="btn btn-simple"
-                    >Dashboard</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="{% url 'appointment:doc-prescriptions' %}"
-                    class="btn btn-simple"
-                    >Prescriptions</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'account:logout' %}"
-                    ><button class="btn btn-warning">Log Out</button></a
-                  >
-                </li>
-                {% endif %} {% if user.is_patient %}
-                <!-- patient's dashboard -->
-                <li>
-                  <a href="{% url 'account:home' %}" class="btn btn-simple">Home</a>
-                </li>
-                <li>
-                  <a href="{% url 'account:about-us' %}" class="btn btn-simple"
-                    >About Us</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'account:contact' %}" class="btn btn-simple"
-                    >Contact</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="{% url 'appointment:patient-appointments' %}"
-                    class="btn btn-simple"
-                    >Your Appointment's</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="{% url 'appointment:pat_payments' %}"
-                    class="btn btn-simple"
-                    >Invoices and Payments</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'user_profile:profile' %}" class="btn btn-simple"
-                    >Profile</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'appointment:med-history' %}" class="btn btn-simple"
-                    >Medical History</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'account:logout' %}"
-                    ><button class="btn btn-warning">Log Out</button></a
-                  >
-                </li>
-                {% endif %} {% if user.is_receptionist %}
-                <!-- receptionist's dashboard -->
-                <li>
-                  <a href="{% url 'account:home' %}" class="btn btn-simple">Home</a>
-                </li>
-                <li>
-                  <a href="{% url 'account:about-us' %}" class="btn btn-simple"
-                    >About Us</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'account:contact' %}" class="btn btn-simple"
-                    >Contact</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'appointment:r_dashboard' %}" class="btn btn-simple"
-                    >Dashboard</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'account:logout' %}"
-                    ><button class="btn btn-warning">Log Out</button></a
-                  >
-                </li>
-                {% endif %} {% if user.is_HR %}
-                <!-- HR's dashboard -->
-                <li>
-                  <a href="{% url 'account:home' %}" class="btn btn-simple">Home</a>
-                </li>
-                <li>
-                  <a href="{% url 'account:about-us' %}" class="btn btn-simple"
-                    >About Us</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'account:contact' %}" class="btn btn-simple"
-                    >Contact</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="{% url 'appointment:hr_dashboard' %}"
-                    class="btn btn-simple"
-                    >Dashboard</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="{% url 'appointment:hr_accounting' %}"
-                    class="btn btn-simple"
-                    >Accounting</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'account:logout' %}"
-                    ><button class="btn btn-warning">Log Out</button></a
-                  >
-                </li>
-               
-                {% endif %} {% else %}
-                <li>
-                  <a href="{% url 'account:home' %}" class="btn btn-simple">Home</a>
-                </li>
-                <li>
-                  <a href="{% url 'account:about-us' %}" class="btn btn-simple"
-                    >About Us</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'account:contact' %}" class="btn btn-simple"
-                    >Contact</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'account:signup' %}" class="btn btn-simple"
-                    >Register</a
-                  >
-                </li>
-                <li>
-                  <a href="{% url 'account:login' %}" class="btn btn-small"
-                    >Login</a
-                  >
-                </li>
-                {% endif %}
-              
-            </ul>
+          <ul class="navbar-nav">
+            {% if user.is_authenticated %} {% if user.is_doctor %}
+            <!-- doctor's dashboard -->
+            <li>
+              <a href="{% url 'account:home' %}" class="btn btn-simple">Home</a>
+            </li>
+            <li>
+              <a href="{% url 'account:about-us' %}" class="btn btn-simple"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'account:contact' %}" class="btn btn-simple"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'user_profile:profile' %}" class="btn btn-simple"
+                >Profile</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'appointment:doctor-appointments' %}"
+                class="btn btn-simple"
+                >Appointments</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'appointment:d_dashboard' %}"
+                class="btn btn-simple"
+                >Dashboard</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'appointment:doc-prescriptions' %}"
+                class="btn btn-simple"
+                >Prescriptions</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'account:logout' %}"
+                ><button class="btn btn-warning">Log Out</button></a
+              >
+            </li>
+            {% endif %} {% if user.is_patient %}
+            <!-- patient's dashboard -->
+            <li>
+              <a href="{% url 'account:home' %}" class="btn btn-simple">Home</a>
+            </li>
+            <li>
+              <a href="{% url 'account:about-us' %}" class="btn btn-simple"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'account:contact' %}" class="btn btn-simple"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'appointment:patient-appointments' %}"
+                class="btn btn-simple"
+                >Your Appointment's</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'appointment:pat_payments' %}"
+                class="btn btn-simple"
+                >Invoices and Payments</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'user_profile:profile' %}" class="btn btn-simple"
+                >Profile</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'appointment:med-history' %}"
+                class="btn btn-simple"
+                >Medical History</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'account:logout' %}"
+                ><button class="btn btn-warning">Log Out</button></a
+              >
+            </li>
+            {% endif %} {% if user.is_receptionist %}
+            <!-- receptionist's dashboard -->
+            <li>
+              <a href="{% url 'account:home' %}" class="btn btn-simple">Home</a>
+            </li>
+            <li>
+              <a href="{% url 'account:about-us' %}" class="btn btn-simple"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'account:contact' %}" class="btn btn-simple"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'appointment:r_dashboard' %}"
+                class="btn btn-simple"
+                >Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'account:logout' %}"
+                ><button class="btn btn-warning">Log Out</button></a
+              >
+            </li>
+            {% endif %} {% if user.is_HR %}
+            <!-- HR's dashboard -->
+            <li>
+              <a href="{% url 'account:home' %}" class="btn btn-simple">Home</a>
+            </li>
+            <li>
+              <a href="{% url 'account:about-us' %}" class="btn btn-simple"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'account:contact' %}" class="btn btn-simple"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'appointment:hr_dashboard' %}"
+                class="btn btn-simple"
+                >Dashboard</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'appointment:hr_accounting' %}"
+                class="btn btn-simple"
+                >Accounting</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'account:logout' %}"
+                ><button class="btn btn-warning">Log Out</button></a
+              >
+            </li>
 
+            {% endif %} {% else %}
+            <li>
+              <a href="{% url 'account:home' %}" class="btn btn-simple">Home</a>
+            </li>
+            <li>
+              <a href="{% url 'account:about-us' %}" class="btn btn-simple"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'account:contact' %}" class="btn btn-simple"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'account:signup' %}" class="btn btn-simple"
+                >Register</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'account:login' %}" class="btn btn-small"
+                >Login</a
+              >
+            </li>
+            {% endif %}
+          </ul>
         </div>
       </div>
     </nav>
 
     <!-- navbar ends -->
 
-
-
     <div class="container mycontent">{% block content %} {% endblock %}</div>
 
     <!-- <canvas id="canvas"></canvas> -->
-
-
-
 
     <!-- FOOTER START -->
 
     <footer class="bg-dark text-light py-4">
       <div class="container">
-          <div class="row">
-              <div class="col-md-4">
-                  <h5>Contact Us</h5>
-                  <address>
-                      DocSwift Pro<br>
-                      123 Hospital Street<br>
-                      Savar, Dhaka, 1342<br>
-                      Phone: (123) 456-7890<br>
-                      Email: info@doswift.com
-                  </address>
-              </div>
-              <div class="col-md-4">
-                  <h5>Quick Links</h5>
-                  <ul class="list-unstyled">
-                      <li><a href="{% url 'account:home' %}">Home</a></li>
-                      <li><a href="{% url 'account:about-us' %}">About Us</a></li>
-                      <li><a href="{% url 'account:signup' %}">Register</a></li>
-                      <li><a href="{% url 'account:login' %}">Login</a></li>
-                      <li><a href="{% url 'account:contact' %}">Contact</a></li>
-                  </ul>
-              </div>
-              <div class="col-md-4">
-                <h5>Latest Info</h5>
-                <div class="card mb-3">
-                  <div class="card-body">
-                      <h6 class="card-title">New Hospital Services</h6>
-                      <p class="card-text">Stay updated with our latest hospital services and medical advancements.</p>
-                      <a href="{% url 'appointment:appointment-create' %}" class="btn btn-primary">Book An Appointment</a>
-                  </div>
-              </div>
-              
-              </div>
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <address>
+              DocSwift Pro<br />
+              123 Hospital Street<br />
+              Savar, Dhaka, 1342<br />
+              Phone: (123) 456-7890<br />
+              Email: info@doswift.com
+            </address>
           </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="{% url 'account:home' %}">Home</a></li>
+              <li><a href="{% url 'account:about-us' %}">About Us</a></li>
+              <li><a href="{% url 'account:signup' %}">Register</a></li>
+              <li><a href="{% url 'account:login' %}">Login</a></li>
+              <li><a href="{% url 'account:contact' %}">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Latest Info</h5>
+            <div class="card mb-3">
+              <div class="card-body">
+                <h6 class="card-title">New Hospital Services</h6>
+                <p class="card-text">
+                  Stay updated with our latest hospital services and medical
+                  advancements.
+                </p>
+                {% if user.is_doctor %}
+                <a
+                  href="{% url 'appointment:appointment-create' %}"
+                  class="btn btn-primary"
+                  >Book An Appointment</a
+                >
+                {% elif user.is_receptionist %}
+                <a
+                  href="{% url 'appointment:appointment-create' %}"
+                  class="btn btn-primary"
+                  >Book An Appointment</a
+                >
+                
+                {% else %}
+                <a href="{% url 'account:about-us' %}" class="btn btn-primary"
+                  >Learn More</a
+                >
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="text-center">
-        <small>All rights reserved by <a target=”_blank href="https://github.com/ProgrammerShahJalal">Md Shah Jalal</a></small>
+        <small
+          >All rights reserved by
+          <a target="”_blank" href="https://github.com/ProgrammerShahJalal"
+            >Md Shah Jalal</a
+          ></small
+        >
       </div>
-  </footer>
-  
-  
+    </footer>
 
     <!-- FOOTER END -->
-
-
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

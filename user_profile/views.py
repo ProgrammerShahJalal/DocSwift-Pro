@@ -9,6 +9,9 @@ def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
 # Create your views here.
+
+
+#reciptions
 @login_required(login_url='/login/')
 def CreateUserProfile(request):
     if request.method == 'POST':
