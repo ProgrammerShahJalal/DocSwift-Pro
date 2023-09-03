@@ -1,16 +1,39 @@
-{% extends "base.html" %}
-
-{% load bootstrap3 %}
+{% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<div class="jumbotron">
-    <h1>Contact</h1>
-    <br>
-    <p>
-        Address - Brgy. Tooy Himamaylan City, <br>
-                   Negros Occidental. <br>
-                  Philippines <br>
-        Phone - 09458423256 <br>
-    </p>
+<div class="container py-4">
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <h2>Contact Us</h2>
+            <p>
+                If you have any questions or need assistance, please feel free to get in touch with us. Our team is here to help you.
+            </p>
+            <ul>
+                <li><strong>Address:</strong> 123 Hospital Street, Savar, Dhaka, 1342</li>
+                <li><strong>Phone:</strong> (123) 456-7890</li>
+                <li><strong>Email:</strong> info@docswiftpro.com</li>
+            </ul>
+            <img width="60%" src="{% static 'images/contact.jpg' %}" alt="contact img">
+        </div>
+        <div class="col-md-6">
+            <h2>Contact Form</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email Address">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="5" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}
