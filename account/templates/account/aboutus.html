@@ -1,15 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
-<div class="jumbotron">
-<h1 align="center">My Hospital</h1>
-<style>
-  p.c {
-    font-style: oblique;
-  }
-</style>
-<h4 align="right" class="c">"We care to cure you."</h4>
-
-    <p> About Us Page..</p>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <h2>About Our Hospital Management System</h2>
+            <p>
+                Welcome to our hospital management system. We are dedicated to providing high-quality healthcare services to our patients. Our system is designed to streamline hospital operations, making it easier for both doctors and patients to access and manage medical information.
+            </p>
+            <p>
+                Our team of skilled professionals is committed to ensuring your well-being and satisfaction. We believe in the healing power of nature, and our hospital is surrounded by lush greenery and natural light to create a serene and refreshing environment.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'images/hospital.jpg' %}" alt="Hospital Image" class="img-fluid rounded">
+        </div>
+    </div>
 </div>
-
 {% endblock %}
