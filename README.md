@@ -21,13 +21,23 @@
 ### 3. Doctor Profile Page: 
 - [x] Display all patient records associated with a specific doctor on their profile page.
 - [x] Allow doctors to easily review and manage their patients' information like edit, delete
-.
+.![image](https://github.com/ProgrammerShahJalal/DocSwift-Pro/assets/79104097/d83bc34a-b0c8-4f0b-b28b-71e02f9f5ffd)
+![image](https://github.com/ProgrammerShahJalal/DocSwift-Pro/assets/79104097/2a5d7da6-032b-425e-a3d3-55a3d53a60ae)
+![image](https://github.com/ProgrammerShahJalal/DocSwift-Pro/assets/79104097/723e3cd0-97d9-4ed7-8734-7a85a410b7a1)
+
 ### 4. Data Display:
 - [x] Create a homepage that showcases all the records entered by doctors.
 - [x] Display relevant patient information in a structured and organized format.
+![image](https://github.com/ProgrammerShahJalal/DocSwift-Pro/assets/79104097/332f5751-260e-47ba-9bec-8f0ae9e15ec7)
+![image](https://github.com/ProgrammerShahJalal/DocSwift-Pro/assets/79104097/0af017c1-7639-4cea-8192-35118e57848c)
+![image](https://github.com/ProgrammerShahJalal/DocSwift-Pro/assets/79104097/7093a53b-727f-4400-a3aa-ae649a82615c)
+
 
 ### 5. Search and Sort Functionality:
 - [x] Implement a search bar to quickly locate specific patient records.
 - [x] Enable doctors to sort patient records by categories such as "Heart Patients" and "Liver Patients."
+![image](https://github.com/ProgrammerShahJalal/DocSwift-Pro/assets/79104097/2c73a7b4-6916-44b6-ab05-a1ac2deeb40b)
+![image](https://github.com/ProgrammerShahJalal/DocSwift-Pro/assets/79104097/40d6a832-b4f9-401d-8bcb-db29bb409c9c)
+![image](https://github.com/ProgrammerShahJalal/DocSwift-Pro/assets/79104097/24ead965-6491-4d0f-9cf2-4520653e4465)
 
 
