@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bootstrap3 %}
 
 {% block content %}
 <div class="container py-4">
@@ -20,7 +21,8 @@
             <h2>Contact Form</h2>
             <form method="POST">
                 {% csrf_token %}
-                {{ form.as_p }}
+                {% bootstrap_form form %}
+                <br>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
