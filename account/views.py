@@ -4,7 +4,8 @@ from django.views.generic import CreateView
 from django.shortcuts import redirect, render
 from .forms import ContactForm, UserCreateForm
 from user_profile.models import UserProfile
-# from django.contrib.auth.decorators import login_required
+from django.db.models import Q
+
 
 # def home(request):
 #     return render(request, 'account/home.html')
@@ -47,7 +48,7 @@ def SignUp(request):
 def home(request):
     if request.method == "GET":
         context = {
-            "pat_list" : UserProfile.objects.filter(user__user_type="P")[:5]
+            "pat_list": UserProfile.objects.filter(Q(user__user_type="P") | Q(user__user_type="D"))[:5]
         }
         return render(request, 'account/home.html', context=context)
 
