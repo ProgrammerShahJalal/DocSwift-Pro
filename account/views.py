@@ -2,7 +2,7 @@ from django.contrib.auth import login, logout
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.shortcuts import redirect, render
-from .forms import * 
+from .forms import ContactForm, UserCreateForm
 from user_profile.models import UserProfile
 
 def home(request):
@@ -11,8 +11,19 @@ def home(request):
 def aboutus(request):
     return render(request, 'account/aboutus.html')
 
+# def contact(request):
+#     return render(request, 'account/contact.html')
+
 def contact(request):
-    return render(request, 'account/contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = ContactForm()
+    
+    return render(request, 'account/contact.html', {'form': form})
+
 
 def SignUp(request):
     if request.method == 'POST':
