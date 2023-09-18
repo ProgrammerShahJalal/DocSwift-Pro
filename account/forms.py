@@ -6,7 +6,6 @@ from .models import ContactMessage
 USER_CHOICES = [
     ('D', 'Doctor'),
     ('P', 'Patient'),
-    ('R', 'Receptionist'),
     ('HR', 'HR'),
 ]
 

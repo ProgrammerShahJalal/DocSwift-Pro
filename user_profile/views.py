@@ -26,7 +26,7 @@ def CreateUserProfile(request):
             user.save_base(raw=True)
             profile.user = user
             profile.save()
-            return redirect('appointment:r_dashboard')
+            return redirect('appointment:d_dashboard')
             print("Hello")
             # except:
             #     print("Hey")
@@ -64,18 +64,18 @@ def UpdatedUserProfilePk(request, pk):
     return render(request, 'user_profile/profile.html', {'form': form, 'user':user})
 
 
-@login_required(login_url='/login/')
-def UpdatedUserProfilePk(request, pk):
-    user = User.objects.get(pk=pk)
-    profile = UserProfile.objects.get(user=user)
-    if request.method == 'POST':
-        form = ProfileUpdateForm(request.POST, instance=profile)
-        if form.is_valid():
-            form.save()
-            return redirect('appointment:r_dashboard')
-    else:
-        form = ProfileUpdateForm(instance=profile)
-    return render(request, 'user_profile/profile.html', {'form': form, 'user':user})
+# @login_required(login_url='/login/')
+# def UpdatedUserProfilePk(request, pk):
+#     user = User.objects.get(pk=pk)
+#     profile = UserProfile.objects.get(user=user)
+#     if request.method == 'POST':
+#         form = ProfileUpdateForm(request.POST, instance=profile)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('appointment:r_dashboard')
+#     else:
+#         form = ProfileUpdateForm(instance=profile)
+#     return render(request, 'user_profile/profile.html', {'form': form, 'user':user})
 
 
 @login_required(login_url='/login/')
@@ -103,15 +103,15 @@ def DeleteUserProfilePk(request, pk):
         return render(request, 'user_profile/profile_delete.html', {'user':user})
 
 
-@login_required(login_url='/login/')
-def DeleteUserProfilePk(request, pk):
-    user = User.objects.get(pk=pk)
-    profile = UserProfile.objects.get(user=user)
-    if request.method == 'POST':
-        user.delete()
-        return redirect('appointment:r_dashboard')
-    else:
-        return render(request, 'user_profile/profile_delete.html', {'user':user})
+# @login_required(login_url='/login/')
+# def DeleteUserProfilePk(request, pk):
+#     user = User.objects.get(pk=pk)
+#     profile = UserProfile.objects.get(user=user)
+#     if request.method == 'POST':
+#         user.delete()
+#         return redirect('appointment:r_dashboard')
+#     else:
+#         return render(request, 'user_profile/profile_delete.html', {'user':user})
 
 
 @login_required(login_url='/login/')

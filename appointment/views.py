@@ -61,7 +61,7 @@ def AppointmentCreateView(request):
         if form.is_valid():
             appointment = form.save(commit=False)
             appointment.save()
-            return redirect('appointment:r_dashboard')
+            return redirect('appointment:d_dashboard')
     else:
         form = AppointmentForm()
     return render(request, 'appointment/appointment_create.html', {'form': form})
