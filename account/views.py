@@ -7,7 +7,6 @@ from user_profile.models import UserProfile
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 
-
 # def home(request):
 #     return render(request, 'account/home.html')
 
@@ -45,7 +44,7 @@ def SignUp(request):
     return render(request, 'account/signup.html', {'form': form})
 
 
-@login_required
+@login_required(login_url='/login/')
 def home(request):
     if request.method == "GET":
         context = {
