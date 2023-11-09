@@ -5,6 +5,7 @@ from django.shortcuts import redirect, render
 from .forms import ContactForm, UserCreateForm
 from user_profile.models import UserProfile
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 
 
 # def home(request):
@@ -44,7 +45,7 @@ def SignUp(request):
     return render(request, 'account/signup.html', {'form': form})
 
 
-# @login_required(login_url='/login/')
+@login_required
 def home(request):
     if request.method == "GET":
         context = {
